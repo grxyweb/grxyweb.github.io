@@ -1,0 +1,363 @@
+/* Settings for small screens */
+@media (max-width: 768px) {
+  .logo,
+  .navbar-brand {
+    max-width: 75%;
+    height: auto;
+    text-align: center;
+    padding: 0;
+    margin: 10px 0 10px 25px;
+  }
+  .nav-item {
+    text-align: right;
+    text-decoration: underline;
+  }
+  h1 {
+    font-size: 40px !important;
+  }
+  h1, h2, h3, h4, h5, h6, p {
+    text-align: center !important;
+  }
+  .video-container {
+    width: 50%;
+    height: 50%;
+  }
+  .carousel {
+    width: 400px !important; /* Set the desired width */
+    height: 200px !important; /* Set the desired height */
+  }
+  .card-text {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+body {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Settings */
+.parent {
+  overflow: scroll;
+  height: 100vh;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+
+.hero video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.content-wrapper {
+  text-align: center;
+}
+
+.hero img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Set the background color */
+body {
+  background: linear-gradient(135deg, #EED9C4, #D0BEAC, #B3A393, #1E1B19);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  height: 100%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.navbar {
+  transition: background-color 0.3s ease;
+}
+
+.navbar-scrolled {
+  background-color: #000; /* Change to your desired background color */
+}
+
+.navbarx {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navbary {
+  background-color: none;
+}
+
+.navbar-black {
+   background: #000;
+}
+
+/* FX */
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0,40px,0)
+  }
+
+  to {
+    transform: translate3d(0,0,0);
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translate3d(0,40px,0)
+  }
+
+  to {
+    transform: translate3d(0,0,0);
+    opacity: 1
+  }
+}
+
+.animated {
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both
+}
+
+.animatedFadeInUp {
+    opacity: 0
+}
+
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+}
+
+.fade-in {
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.glow {
+  color: #fff;
+  text-align: center;
+  animation: glow 1s;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
+  }
+  
+  to {
+    text-shadow: 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff;
+  }
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
+  }
+  
+  to {
+    text-shadow: 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff, 0 0 0px #fff;
+  }
+}
+
+.glow2 {
+  color: #3B3B3B;
+  text-align: center;
+  animation: glow2 1s;
+}
+
+@keyframes glow2 {
+  from {
+    text-shadow: 0 0 10px #3B3B3B, 0 0 20px #3B3B3B, 0 0 30px #3B3B3B, 0 0 40px #3B3B3B;
+  }
+  
+  to {
+    text-shadow: 0 0 0px #3B3B3B, 0 0 0px #3B3B3B, 0 0 0px #3B3B3B, 0 0 0px #3B3B3B;
+  }
+}
+
+@-webkit-keyframes glow2 {
+  from {
+    text-shadow: 0 0 10px #3B3B3B, 0 0 20px #3B3B3B, 0 0 30px #3B3B3B, 0 0 40px #3B3B3B;
+  }
+  
+  to {
+    text-shadow: 0 0 0px #3B3B3B, 0 0 0px #3B3B3B, 0 0 0px #3B3B3B, 0 0 0px #3B3B3B;
+  }
+}
+
+/* Carousel settings */
+.carousel {
+  width: 800px; /* Set the desired width */
+  height: 400px; /* Set the desired height */
+  overflow: hidden; /* Crop the images that exceed the container size */
+}
+
+/* Set the font family and color for all text */
+body {
+  background-color: #D0BEAC;
+}
+
+@font-face {
+  font-family: 'pp_hattonbold';
+  src: url('/Fonts/pp_hatton_bold_700-webfont.woff2') format('woff2'),
+       url('/Fonts/pp_hatton_bold_700-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'pp_hattonmedium';
+  src: url('/Fonts/pp_hatton_medium_500-webfont.woff2') format('woff2'),
+       url('/Fonts/pp_hatton_medium_500-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'pp_hattonultralight';
+  src: url('/Fonts/pp_hatton_ultralight_200-webfont.woff2') format('woff2'),
+       url('/Fonts/pp_hatton_ultralight_200-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 72px;
+}
+
+
+h1, h2, h3, h4, ul, a {
+  font-family: "pp_hattonmedium", sans-serif;
+  color: #3B3B3B;
+  padding: 20px;
+}
+
+h5, h6 {
+  font-family: "pp_hattonultralight", sans-serif;
+  color: #3B3B3B;
+  padding: 20px;
+}
+
+p {
+  font-family: "Deckard-Regular", sans-serif;
+  color: #3B3B3B;
+  padding: 20px;
+}
+
+/* Style the form */
+.form-control {
+  color: #3B3B3B;
+  border-color: #3B3B3B;
+}
+
+.form-control::placeholder {
+  color: #3B3B3B;
+}
+
+.form-control:focus {
+  color: #3B3B3B;
+}
+
+input:not(input:-webkit-autofill)::-webkit-contacts-auto-fill-button {
+  background-color: #3B3B3B;
+}
+
+form select,
+form input,
+form textarea {
+  margin-bottom: 15px;
+}
+
+.btn {
+  background-color: none;
+  border: 3px solid #3B3B3B;
+  color: #3B3B3B;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color color 0.3s ease;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #3B3B3B;
+  color: white;
+  mix-blend-mode: screen;
+}
