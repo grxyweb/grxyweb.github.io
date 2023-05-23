@@ -94,16 +94,10 @@
     var scrollPosition = window.scrollY;
   
     if (scrollPosition > 0) {
-      navbar.classList.add('navbar-scrolled', 'navbar-dark');
+      navbar.classList.add('navbar-scrolled', 'navbar-dark', 'logo-dark');
     } else {
-      navbar.classList.remove('navbar-scrolled', 'navbar-dark');
+      navbar.classList.remove('navbar-scrolled', 'navbar-dark', 'logo-dark');
     }
-  });
-</script>
-<script>
-  $('.navbar-toggler').click(function() {
-    $('nav').toggleClass('navbar-black');
-    $('nav').toggleClass('navbar-dark');
   });
 </script>
 <script>
@@ -117,11 +111,12 @@
     else
       $(".logo").attr("src", initialSrc);
   });
-  // $('.navbar-toggler').click(function() {
-  //   if (value < 0)
-  //     $(".logo").attr("src", scrollSrc);
-  //   else
-  //     $(".logo").attr("src", initialSrc);
-  // });
 </script>
+<script>
+  $('.navbar-toggler').click(function() {
+    $('nav').toggleClass('navbar-black');
+    $('nav').addClass('navbar-dark');
+  });
+</script>                                                                                                   
+
 </html>

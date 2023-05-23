@@ -299,13 +299,13 @@ h1 {
 
 
 h1, h2, h3, h4, ul, a {
-  font-family: "pp_hattonmedium", sans-serif;
+  font-family: "pp_hattonmedium", "Deckard-Regular", sans-serif;
   color: #3B3B3B;
   padding: 20px;
 }
 
 h5, h6 {
-  font-family: "pp_hattonultralight", sans-serif;
+  font-family: "pp_hattonultralight", "Deckard-Regular", sans-serif;
   color: #3B3B3B;
   padding: 20px;
 }
