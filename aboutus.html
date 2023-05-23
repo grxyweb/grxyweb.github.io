@@ -53,23 +53,23 @@
           </div>
         </div>
         <div class="row justify-content-center" style="margin: 20px;">
-          <div class="col-lg-4 card bg-transparent" style="color: #3B3B3B; text-align: center; margin-top: 10px; margin-left: 10px; margin-right: 10px; border: 3px double #3B3B3B; margin-bottom: 20px; padding: 25px;">
+          <div class="col-lg-4 card bg-transparent reveal" style="color: #3B3B3B; text-align: center; margin-top: 10px; margin-left: 10px; margin-right: 10px; border: 3px double #3B3B3B; margin-bottom: 20px; padding: 25px;">
             <h3 class="card-title"><b>Passionate Product Discovery</b></h3>
               <p class="card-text">We are a team of dedicated and passionate individuals who have come together with the common goal of bringing unique and high-quality products to our customers. We believe that the world is full of amazing products that have yet to be discovered by the masses, and we want to change that.</p>
           </div>
-          <div class="col-lg-4 card bg-transparent" style="color: #3B3B3B; text-align: center; margin-top: 10px; margin-left: 10px; margin-right: 10px; border: 3px double #3B3B3B; margin-bottom: 20px; padding: 25px;">
+          <div class="col-lg-4 card bg-transparent reveal" style="color: #3B3B3B; text-align: center; margin-top: 10px; margin-left: 10px; margin-right: 10px; border: 3px double #3B3B3B; margin-bottom: 20px; padding: 25px;">
             <h3 class="card-title"><b>Global Product Exchange</b></h3>
               <p class="card-text">Our company was founded with the belief that importing products from different parts of the world can be a mutually beneficial process. Not only does it provide consumers with access to new and exciting products, but it also helps small businesses and artisans in other countries to reach a wider audience.</p>
           </div>
-          <div class="col-lg-4 card bg-transparent" style="color: #3B3B3B; text-align: center; margin-top: 10px; margin-left: 10px; margin-right: 10px; border: 3px double #3B3B3B; margin-bottom: 20px; padding: 25px;">
+          <div class="col-lg-4 card bg-transparent reveal" style="color: #3B3B3B; text-align: center; margin-top: 10px; margin-left: 10px; margin-right: 10px; border: 3px double #3B3B3B; margin-bottom: 20px; padding: 25px;">
             <h3 class="card-title"><b>Ethical and Sustainable Business Practices</b></h3>
               <p class="card-text">At our core, we are committed to ethical business practices and sustainability. We believe that it is our responsibility to ensure that our products are sourced from manufacturers who follow fair labor practices and prioritize environmentally-friendly production methods. We also strive to minimize our carbon footprint by using eco-friendly packaging and shipping methods whenever possible.</p>
           </div>
-          <div class="col-lg-4 card bg-transparent" style="color: #3B3B3B; text-align: center; margin-top: 10px; margin-left: 10px; margin-right: 10px; border: 3px double #3B3B3B; margin-bottom: 20px; padding: 25px;">
+          <div class="col-lg-4 card bg-transparent reveal" style="color: #3B3B3B; text-align: center; margin-top: 10px; margin-left: 10px; margin-right: 10px; border: 3px double #3B3B3B; margin-bottom: 20px; padding: 25px;">
             <h3 class="card-title"><b>Curating Unique Products</b></h3>
               <p class="card-text">We are constantly searching for new and exciting products to bring to our customers. Our team works tirelessly to research and identify potential products, and we take great care in selecting only the best. From exotic spices to handcrafted furniture, we have a wide range of products that are sure to surprise and delight.</p>
           </div>
-          <div class="col-lg-4 card bg-transparent" style="color: #3B3B3B; text-align: center; margin-top: 10px; margin-left: 10px; margin-right: 10px; border: 3px double #3B3B3B; margin-bottom: 20px; padding: 25px;">
+          <div class="col-lg-4 card bg-transparent reveal" style="color: #3B3B3B; text-align: center; margin-top: 10px; margin-left: 10px; margin-right: 10px; border: 3px double #3B3B3B; margin-bottom: 20px; padding: 25px;">
             <h3 class="card-title"><b>Mission Statement</b></h3>
               <p class="card-text">Our mission is simple: to provide our customers with unique, high-quality products that they can feel good about purchasing. We are excited to be on this journey and look forward to sharing our discoveries with you.</p>
           </div>
@@ -118,5 +118,39 @@
     $('nav').addClass('navbar-dark');
   });
 </script>                                                                                                   
+<script>
+  function scrollTrigger(selector, options = {}){
+    let els = document.querySelectorAll(selector)
+    els = Array.from(els)
+    els.forEach(el => {
+      addObserver(el, options)
+    })
+  }
+
+  function addObserver(el, options){
+    if(!('IntersectionObserver' in window)){
+      if(options.cb){
+        options.cb(el)
+      }else{
+        entry.target.classList.add('active')
+      }
+      return
+    }
+    let observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          if(options.cb){
+            options.cb(el)
+          }else{
+            entry.target.classList.add('active')
+          }
+          observer.unobserve(entry.target)
+        }
+      })
+    }, options)
+    observer.observe(el)
+  }
+  scrollTrigger('.reveal')
+</script>
 
 </html>
